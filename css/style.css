@@ -1,0 +1,64 @@
+.soft-border {
+	background-color: #eee;
+	border-radius: 5px;
+	padding-top: 10px; 
+	margin-bottom: 10px;
+}
+
+a,a:hover,a:visited{
+	color: #2fac64;
+}
+
+
+a:active{
+	color: #154f2d;
+}
+
+.titulo-form{
+	border-bottom: 1px solid black;
+	padding-left:10px; 
+}
+
+.envia{
+	width: 50%;
+	margin-left: 25%;
+}
+
+
+
+.btn-primary:hover{
+	background-color: #2fac64;
+	border-color: #2fac64;
+}
+
+.btn-primary:active{
+	background-color: #2fac64;
+	border-color: #2fac64;
+}
+
+
+.btn-primary{
+	width: 50%;
+	margin-left: 25%;
+	background-color: #4bd184;
+	border-color: #4bd184;
+}
+
+
+.junta-1{
+	border-radius: 3.2px 0px 0px 3.2px;
+}
+
+.junta-2{
+	border-radius: 0px 3.2px 3.2px 0px;
+}
+
+
+.logo{
+	width: 14%;
+}
+
+
+.some{
+	display: none;
+}
