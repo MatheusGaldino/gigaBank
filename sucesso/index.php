@@ -7,6 +7,9 @@
 
     header("Content-type: text/html; charset=utf-8");
 
+    /*
+    *MUDAR PARA SER DEFINIDO DE ACORDO COM O USUÁRIO QUE OPERA O SISTEMA 
+    */
     $_SESSION['agConta'] = '0010';
 
     //seta a conexão com o banco

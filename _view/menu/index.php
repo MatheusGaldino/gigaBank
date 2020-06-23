@@ -3,6 +3,9 @@
 <head>
 	<title>Cadastro de Cliente</title>
 	<meta charset="utf-8">
+	<link rel="shortcut icon" href="/gigabank/_img/favicon-32x32.png" type="image/x-icon">
+	<link rel="icon" href="/gigabank/_img/favicon-32x32.png" type="image/x-icon">
+
 	<link rel="stylesheet" href=<?php echo "$bootstrapPath";?>>
 
 	<link rel="stylesheet" href=<?php echo "$cssPath";?>>

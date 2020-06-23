@@ -58,19 +58,19 @@ class Conta
 		
 		//define a taxa mensal de acordo com o tipo de conta
 		switch ($this->tipo) {
-			case '1':
+			case '1': //conta corrente
 				$this->taxaMensal = 20;
 				break;
-			case '2':
+			case '2': //conta pupança
 				$this->taxaMensal = 0;
 				break;
-			case '3':
+			case '3': //conta salário
 				$this->taxaMensal = 0;
 				break;
-			case '4':
+			case '4': //conta universitária
 				$this->taxaMensal = 5;
 				break;
-			default:
+			default: //default
 				$this->taxaMensal = 15;
 				break;
 		}
