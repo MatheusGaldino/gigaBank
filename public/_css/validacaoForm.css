@@ -1,0 +1,14 @@
+.erro{
+    border: 1px solid red;
+}
+
+.erroDisplay{
+    font-size: 0.9em;
+    padding-left: 5px;
+    color: red;
+}
+
+.hide{
+    margin: 0;
+    display: none;
+}
