@@ -3,6 +3,8 @@
 require_once('app/core/core.php');
 
 //require de todas as controllers do projeto
+
+//automatizar o require da controller de forma dinamica, chamando uma controller de acordo com a url acessada
 require_once('app/controller/ContaController.php');
 require_once('app/controller/ErroController.php');
 require_once('app/controller/ClienteController.php');
