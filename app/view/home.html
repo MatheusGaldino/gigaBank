@@ -1,5 +1,13 @@
-<h1>Home do Site</h1>
+<h1>Bom dia</h1>
 
-<p>Funcionou direitinho</p>
+<p>Faça login para começar seu dia de trabalho!</p>
+<form method="post">
+    <label for="user">Usuário:</label>
+    <input type="text" name="user">
+    
+    <label for="senha">Senha:</label>
+    <input type="password" name="senha">
 
-<a href="/gigabank/menu">MENU</a>
+    <input type="submit" name="login" value="Login">
+    {{erro}}
+</form>

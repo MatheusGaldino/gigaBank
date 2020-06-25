@@ -1,9 +1,15 @@
-.soft-border {
-	background-color: #eee;
-	border-radius: 5px;
-	padding-top: 10px; 
-	margin-bottom: 10px;
+body{
+	background-color:#569570;
 }
+
+.mainContainer{
+	width: 90%;
+	margin-left: 5%;
+	background-color: #fff;
+	padding: 20px;
+	box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5);
+}
+
 
 a,a:hover,a:visited{
 	color: #2fac64;
@@ -14,6 +20,9 @@ a:active{
 	color: #154f2d;
 }
 
+
+
+/*Forms em geral*/
 .titulo-form{
 	border-bottom: 1px solid black;
 	padding-left:10px; 
@@ -45,6 +54,24 @@ a:active{
 }
 
 
+
+.soft-border {
+	background-color: #eee;
+	border-radius: 5px;
+	padding-top: 10px; 
+	margin-bottom: 10px;
+}
+
+/*================*/
+
+
+
+
+
+
+
+
+/* Form do Serviços TIRA DAQUI*/
 .junta-1{
 	border-radius: 3.2px 0px 0px 3.2px;
 }
@@ -53,24 +80,7 @@ a:active{
 	border-radius: 0px 3.2px 3.2px 0px;
 }
 
-
+/*MENU*/
 .logo{
 	width: 14%;
-}
-
-
-.some{
-	display: none;
-}
-
-body{
-	background-color:#569570;
-}
-
-.mainContainer{
-	width: 90%;
-	margin-left: 5%;
-	background-color: #fff;
-	padding: 20px;
-	box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5);
 }

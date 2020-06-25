@@ -1,5 +1,4 @@
 <?php 
-namespace Banco;
 
 require_once 'model/DbConn.php';
 require_once 'model/cliente.php';

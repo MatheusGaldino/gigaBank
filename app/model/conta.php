@@ -1,9 +1,5 @@
 <?php
 
-namespace Banco;
-header("Content-type: text/html; charset=utf-8");
-date_default_timezone_set('America/Sao_Paulo');
-
 /* Classe que realiza as operações das contas */
 class Conta
 {

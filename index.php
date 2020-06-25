@@ -2,9 +2,10 @@
 //chama o core do MVC
 require_once('app/core/core.php');
 
-//require de todas as controllers do projeto
+header("Content-type: text/html; charset=utf-8");
+date_default_timezone_set('America/Sao_Paulo');
 
-//automatizar o require da controller de forma dinamica, chamando uma controller de acordo com a url acessada
+//require de todas as controllers do projeto
 require_once('app/controller/ContaController.php');
 require_once('app/controller/ErroController.php');
 require_once('app/controller/ClienteController.php');
@@ -13,6 +14,10 @@ require_once('app/controller/HomeController.php');
 require_once('app/controller/ServicosController.php');
 require_once('app/controller/SucessoController.php');
 require_once('app/controller/CaixaController.php');
+
+
+session_start();
+
 
 
 if(isset($_GET['url'])){
@@ -41,6 +46,7 @@ $render = str_replace('{{Título}}', $preView['title'], $render);        //adici
 $render = str_replace('{{conteudo}}', $preView['content'], $render);    //adiciona o conteúdo da página
 $render = str_replace('{{javascript}}', $preView['js'], $render);       //adiciona um js personalizado na página
 $render = str_replace('{{css}}', $preView['css'], $render);             //adiciona um css personalizado na página
+
 
 //renderiza a página que foi montada
 echo $render;

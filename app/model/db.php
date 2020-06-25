@@ -1,4 +1,5 @@
-<?php
+<?php 
+
 
 class DataBase extends mysqli{
 	private $server;

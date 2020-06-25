@@ -1,7 +1,4 @@
-<?php
-
-namespace Banco;
-header("Content-type: text/html; charset=utf-8");
+<?php 
 
 /* classe que seta a conexão com o banco de dados */
 class dbConn{
@@ -27,7 +24,7 @@ class dbConn{
 	}
 
 	//
-	function pegarBanco(){
+	function getDB(){
 		return $this->db;
 	}
 

@@ -10,6 +10,12 @@ class MenuController
 	private static $js = "";
 	
 	public static function index(){
+		//autenticação
+		if (!isset($_SESSION['login']) && !$_SESSION['login']) {
+			header('location: erro');
+		}
+
+
 		$conteudo = file_get_contents('app/view/menu.html');
 		echo $conteudo;
 		

@@ -1,19 +1,15 @@
 <?php 
 
-/* Classe que realiza as operações das contas */
-class Conta
-{
-	private $cpf;
-	private $tipo;
-	private $senha;
-	private $numContrato;
-	private $numConta;
-	private $agConta;
-	private $possuiCartao;
-	private $taxaMensal;
-	private $saldo;
-	private $dataCadastro;
+require_once 'DbConn.php';
+require_once 'cliente.php';
+require_once 'conta.php';
 
+/* Classe que realiza cadastro e autenticação de usuário */
+class Usuario
+{
+	private $user;
+    private $senha;
+    
 	private $db;
 	
 	
@@ -24,14 +20,15 @@ class Conta
 	
 
 	/*adiciona a conexão do banco a classe*/
-	public function setDb($db)
+	public function setDB($db)
 	{
 		$this->db = $db;
 	}
 
 	/* testa se a conexão do banco está correta*/
-	public function debugDb()
+	public function debugDB()
 	{	
+		$db = $this->db;
 		if ($db->connect_errno) {
 		    return $db->erro = "Erro ao se conectar com o banco MySQL: " . $obj->connect_error;
 		}else{
@@ -42,43 +39,22 @@ class Conta
 	
 
 	/* ============================ Métodos ==============================*/
-	public function setConta($a, $b, $c, $d, $e)
+	public function setConta($a, $b, $c, $d, $e, $f)
 	{	
 		$this->cpf = $a;
 		$this->tipo = $b;
-		$this->senha = $c;
+		$this->senhaConta = $c;
 		$this->numContrato = $d;
 		
 		$this->possuiCartao = $e;
 		
-		//define a taxa mensal de acordo com o tipo de conta
-		switch ($this->tipo) {
-			case '1':
-				$this->taxaMensal = 20;
-				break;
-			case '2':
-				$this->taxaMensal = 0;
-				break;
-			case '3':
-				$this->taxaMensal = 0;
-				break;
-			case '4':
-				$this->taxaMensal = 5;
-				break;
-			default:
-				$this->taxaMensal = 15;
-				break;
-		}
-		$this->saldo = 0;
-		$this->dataCadastro = date('c');
-
-		$db = $this->db;
-		$res = $db->query("SELECT numConta FROM conta ORDER BY numConta DESC LIMIT 1");
-		$row = $res->fetch_assoc();
-
-		$this->numConta = $row['numConta'] + 1;
-		$this->agConta = 1;
+		
+		
+		$this->numConta = str_pad($row['numConta'] + 1, 6, "0", STR_PAD_LEFT);
+		$this->agConta = $f;
 	}
+
+
 
 	public function cadastrarConta(){
 		$db = $this->db;
@@ -90,9 +66,20 @@ class Conta
 		}
 	}
 
-	public function atualizarCliente(){
+
+	public function login($user, $pass){
+		$user = filter_var($user, FILTER_SANITIZE_STRING);
+		$pass = filter_var($pass, FILTER_SANITIZE_STRING);
+
 		$db = $this->db;
 
-		$db->query("INSERT INTO cliente (nome) values ('{$this->nome}')");
+		$res = $db->query("SELECT 'usuario', 'senha' FROM usuario where usuario = '$user' && senha = '$pass'");
+
+		if($res->num_rows>0){
+			header('location: menu');
+			$_SESSION['login'] = true;
+		}else{
+			return "erro";
+		}
 	}
 }
