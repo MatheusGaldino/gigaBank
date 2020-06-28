@@ -4,6 +4,7 @@
 class Conta
 {
 	private $cpf;
+	private $idCliente;
 	private $tipo;
 	private $senhaConta;
 	private $numContrato;
@@ -47,8 +48,9 @@ class Conta
 	{	
 		$this->cpf = $a;
 		$this->tipo = $b;
-		$this->senhaConta = $c;
+		$this->senhaConta = password_hash($c, PASSWORD_BCRYPT);
 		$this->numContrato = $d;
+		$this->idCliente = '77';
 		
 		$this->possuiCartao = $e;
 		
@@ -86,10 +88,10 @@ class Conta
 	public function cadastrarConta(){
 		$db = $this->db;
 
-		if($db->query("INSERT INTO conta (cpf, tipo, numContrato, senhaConta, numConta, agConta, possuiCartao, taxaMensal, saldo, dataCadastro) values ('{$this->cpf}', '{$this->tipo}', '{$this->numContrato}', '{$this->senhaConta}', '{$this->numConta}', '{$this->agConta}', '{$this->possuiCartao}', '{$this->taxaMensal}', '{$this->saldo}', '{$this->dataCadastro}')")){
+		if($db->query("INSERT INTO conta (cpf, idCliente, tipo, numContrato, senhaConta, numConta, agConta, possuiCartao, taxaMensal, saldo, dataCadastro) values ('{$this->cpf}', '{$this->idCliente}','{$this->tipo}', '{$this->numContrato}', '{$this->senhaConta}', '{$this->numConta}', '{$this->agConta}', '{$this->possuiCartao}', '{$this->taxaMensal}', '{$this->saldo}', '{$this->dataCadastro}')")){
 			return 'foi';
 		}else{
-			return 'numfoi';
+			return "INSERT INTO conta (cpf, tipo, numContrato, senhaConta, numConta, agConta, possuiCartao, taxaMensal, saldo, dataCadastro) values ('{$this->cpf}', '{$this->tipo}', '{$this->numContrato}', '{$this->senhaConta}', '{$this->numConta}', '{$this->agConta}', '{$this->possuiCartao}', '{$this->taxaMensal}', '{$this->saldo}', '{$this->dataCadastro}'";
 		}
 	}
 

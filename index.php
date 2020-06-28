@@ -5,6 +5,10 @@ require_once('app/core/core.php');
 header("Content-type: text/html; charset=utf-8");
 date_default_timezone_set('America/Sao_Paulo');
 
+//require das models do projeto
+require_once('app/model/Cliente.php');
+
+
 //require de todas as controllers do projeto
 require_once('app/controller/ContaController.php');
 require_once('app/controller/ErroController.php');

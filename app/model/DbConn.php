@@ -31,4 +31,6 @@ class dbConn{
 	function encerrarDB(){
 		//return $this->db;
 	}
+
+	
 }
